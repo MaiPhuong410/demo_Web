@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "DanhMuc_SanPham";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2></h2>
+<table>
+    <tr>
+        <td id="tddanhmuc"
+            style="text-align:left; vertical-align:text-top;background-color:lavender">
+        </td>
+        <td id="tdsanpham"
+            style="text-align:left; vertical-align:text-top;background-color:moccasin">
+        </td>
+    </tr>
+</table>
+@section scripts
+{
+    <script>
+        $.ajax({
+            url: "/DanhMuc/PartialDanhMuc",
+            type: 'Get',
+            success: function (data) {
+                $("#tddanhmuc").empty().append(data);
+            },
+            error: function (xhr, status, error) {
+                alert(xhr.responseText);
+            }
+            });
+        function xemsanpham(iddm) {
+            $.ajax({
+                url: "/SanPham/PartialSanPham",
+                type: 'Get',
+                data: { madm: iddm },
+                success: function (data) {
+                    $("#tdsanpham").empty().append(data);
+                },
+                error: function (xhr, status, error) {
+                    alert(xhr.responseText);
+                }
+        });
+        }
+    </script>
+}

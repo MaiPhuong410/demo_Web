@@ -1,0 +1,67 @@
+﻿@model IEnumerable<QuanLyCuaHang.Models.SanPham>
+
+
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.MaDMId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaSP)
+        </th>*@
+        <th>
+            @*@Html.DisplayNameFor(model => model.TenSP)*@
+            <label>Tên sản phẩm</label>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.HinhAnh)*@
+            <label>Hình ảnh</label>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.MoTa)*@
+            <label>Mô tả</label>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.GiaSP)*@
+            <label>Giá</label>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.MaDMId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaSP)
+        </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.TenSP)
+    </td>
+    <td>
+        @*@Html.DisplayFor(modelItem => item.HinhAnh)*@
+        <img src="~/HinhAnh/@Url.Content(item.HinhAnh)"
+             alt="Image"
+             width="200"
+             height="160" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MoTa)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GiaSP)
+    </td>
+    <td>
+        @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |*@
+        @Html.ActionLink("Chi Tiết", "Details_1", new { id = item.Id }) |
+        @*@Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+        <a class="btn btn-success" href="@Url.Action("ThemVaoGio", "GioHang", new { id = item.Id })">
+            <span class="glyphicon glyphicon-shopping-cart"></span>  Thêm vào giỏ
+        </a>
+    </td>
+</tr>
+    }
+
+</table>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="QuanLyWebCoffee">
+  <DataContextMoniker Name="/QuanLyWebCoffeeDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4cb7ffcd-6485-43d2-83a1-0c6a45b0de4e" absoluteBounds="6.25, 1.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QuanLyWebCoffeeDataContext/CTHD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="beef3a3a-5db0-40b7-940f-dc098492f8db" absoluteBounds="6.265, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d9170a81-e98d-456b-a1a3-05f9c11d8bdb" absoluteBounds="0.75, 1.375, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/QuanLyWebCoffeeDataContext/DanhMuc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0b5f8692-9baa-4fb1-9099-ba7fec45b724" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a9bfab30-b771-4694-a29c-bd00fbcf590d" absoluteBounds="3.5, 5.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/QuanLyWebCoffeeDataContext/HoaDon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="603482d8-6e0a-40d9-acde-80fbbb7a8d1a" absoluteBounds="3.515, 5.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dfe2e344-a2c7-4888-ae8b-5fb736ea4333" absoluteBounds="0.75, 5.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QuanLyWebCoffeeDataContext/KhachHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e63838c9-5656-4692-8b2d-f5a43a6c9f8c" absoluteBounds="0.765, 5.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e012eb23-8fc7-4e9a-9002-4785bb4b5a31" absoluteBounds="3.5, 0.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/QuanLyWebCoffeeDataContext/SanPham" />
+      <nestedChildShapes>
+        <elementListCompartment Id="38edf35b-9147-4c96-813f-ad5a61e82311" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 6.06814697265625); (7.25 : 6.06814697265625); (7.25 : 2.82859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuanLyWebCoffeeDataContext/HoaDon/HoaDon_CTHD" />
+      <nodes>
+        <classShapeMoniker Id="a9bfab30-b771-4694-a29c-bd00fbcf590d" />
+        <classShapeMoniker Id="4cb7ffcd-6485-43d2-83a1-0c6a45b0de4e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.06814697265625); (3.5 : 6.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuanLyWebCoffeeDataContext/KhachHang/KhachHang_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="dfe2e344-a2c7-4888-ae8b-5fb736ea4333" />
+        <classShapeMoniker Id="a9bfab30-b771-4694-a29c-bd00fbcf590d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.03929768880208); (6.25 : 2.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuanLyWebCoffeeDataContext/SanPham/SanPham_CTHD" />
+      <nodes>
+        <classShapeMoniker Id="e012eb23-8fc7-4e9a-9002-4785bb4b5a31" />
+        <classShapeMoniker Id="4cb7ffcd-6485-43d2-83a1-0c6a45b0de4e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.06814697265625); (3.5 : 2.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuanLyWebCoffeeDataContext/DanhMuc/DanhMuc_SanPham" />
+      <nodes>
+        <classShapeMoniker Id="d9170a81-e98d-456b-a1a3-05f9c11d8bdb" />
+        <classShapeMoniker Id="e012eb23-8fc7-4e9a-9002-4785bb4b5a31" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

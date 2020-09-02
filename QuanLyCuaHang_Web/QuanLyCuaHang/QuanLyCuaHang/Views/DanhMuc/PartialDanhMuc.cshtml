@@ -1,0 +1,28 @@
+﻿@model IEnumerable<QuanLyCuaHang.Models.DanhMuc>
+
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.MaDM)
+        </th>*@
+        <th>
+            @*@Html.DisplayNameFor(model => model.TenDM)*@
+            <label>Tên danh mục</label>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr onclick="xemsanpham('@item.Id')">
+            @*<td>
+                @Html.DisplayFor(modelItem => item.MaDM)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.TenDM)
+            </td>
+
+        </tr>
+    }
+
+</table>

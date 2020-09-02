@@ -1,0 +1,88 @@
+﻿@model QuanLyCuaHang.Models.SanPham
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Chỉnh sửa sản phẩm</h2>
+<div>
+    <i>
+        @Html.ActionLink("Quay lại","Index")
+    </i>
+</div>
+@using (Html.BeginForm("Edit", "SanPham", FormMethod.Post,
+                                            new { enctype = "multipart/form-data" }))
+{
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+        <h4></h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.MaDMId, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <label class="control-label col-md-2">Mã Id danh mục</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.MaDMId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MaDMId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.MaSP, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <label class="control-label col-md-2">Mã sản phẩm</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.MaSP, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MaSP, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.TenSP, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <label class="control-label col-md-2">Tên sản phẩm</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TenSP, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.HinhAnh, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <label class="control-label col-md-2">Hình minh họa</label>
+                    <div class="col-md-10">
+                        <img src="~/HinhAnh/@Url.Content(Model.HinhAnh)" />
+                        <input title="Upload a product image" type="file" name="HinhAnh" />
+                        @Html.ValidationMessageFor(model => model.HinhAnh, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.MoTa, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <label class="control-label col-md-2">Mô tả</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.GiaSP, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <label class="control-label col-md-2">Giá sản phẩm</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.GiaSP, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.GiaSP, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Lưu" class="btn btn-default" />
+                    </div>
+                </div>
+    </div>
+}
+
+

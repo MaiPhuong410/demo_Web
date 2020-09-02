@@ -1,0 +1,80 @@
+﻿@model QuanLyCuaHang.Models.SanPham
+
+@{
+    ViewBag.Title = "Details_1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết sản phẩm</h2>
+<div>
+    <i>
+        @Html.ActionLink("Quay lại", "DanhSachDanhMuc")
+    </i>
+</div>
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.MaDMId)
+            <label>Mã ID danh mục</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaDMId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaSP)
+            <label>Mã sản phẩm</label>
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaSP)
+        </dd>*@
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.TenSP)*@
+            <label>Tên sản phẩm</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.HinhAnh)*@
+            <label>Hình minh họa</label>
+        </dt>
+
+        <dd>
+
+            <img src="~/HinhAnh/@Url.Content(Model.HinhAnh)"
+                 alt="HinhAnh"
+                 width="200"
+                 height="180" />
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.MoTa)*@
+            <label>Mô tả</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.GiaSP)*@
+            <label>Giá sản phẩm</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaSP)
+        </dd>
+        <a class="btn btn-success" href="@Url.Action("ThemVaoGio", "GioHang", new { id = Model.Id })">
+            <span class="glyphicon glyphicon-shopping-cart"></span>  Thêm vào giỏ
+        </a>
+    </dl>
+</div>
